@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+#this code can get divisors, proper_divisors or check if a number is perfect
+
+def get_divisors(num):
+    divisors = [number for number in range(1, num + 1) if num % number == 0]
+    return(divisors)
+
+def get_proper_divisors(num):
+    proper_divisors = [number for number in range(1, num) if num % number == 0 and number != num]
+    return(proper_divisors)
+
+def is_perfect(num):
+    total = 0
+    proper_divisors = get_proper_divisors(num)
+    for numbers in proper_divisors:
+        total = total + numbers
+    
+    if total == num:
+        return(True) 
+
+    else:
+        return(False)
